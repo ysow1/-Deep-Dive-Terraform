@@ -55,6 +55,7 @@ terraform apply qa.tfplan
 ## You can go into the ACL section of the Consul UI and grab it
 # Linux and MacOS
 export CONSUL_HTTP_TOKEN=SECRETID_VALUE
+export CONSUL_HTTP_TOKEN=0cac6c3c-8bdf-6c6e-38b6-590971b486a5
 
 # Windows
 $env:CONSUL_HTTP_TOKEN="SECRETID_VALUE"

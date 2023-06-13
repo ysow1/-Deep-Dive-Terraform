@@ -32,7 +32,8 @@ consul acl bootstrap
 # Set CONSUL_TOKEN to SecretID
 
 # Linux and MacOS
-export CONSUL_HTTP_TOKEN=SECRETID_VALUE
+export CONSUL_HTTP_TOKEN=SECRETID_VALUE 
+export CONSUL_HTTP_TOKEN=65e3b84b-f6d5-a9a2-2d77-5329b59ee678
 
 # Windows
 $env:CONSUL_HTTP_TOKEN="SECRETID_VALUE"
@@ -46,6 +47,12 @@ terraform apply consul.tfplan
 # Get token values for Mary and Sally and record them for later
 consul acl token read -id ACCESSOR_ID_MARY
 consul acl token read -id ACCESSOR_ID_SALLY
+consul acl token read -id 80dfaeef-15a4-53d5-4a51-4d339aaed35d
+SecretID:         898f9ea2-6e91-f06f-0b0d-ffe4dac042a3
+consul acl token read -id 30c71d62-150d-9edb-9cda-86652ff9f7da
+SecretID:         0cac6c3c-8bdf-6c6e-38b6-590971b486a5
+mary_token_accessor_id = "80dfaeef-15a4-53d5-4a51-4d339aaed35d"
+sally_token_accessor_id = "30c71d62-150d-9edb-9cda-86652ff9f7da"
 
 # Go back to the main m4 folder
 cd ..
@@ -62,6 +69,7 @@ cd ..\m3
 # Replace SECRETID_VALUE with Mary Moe's secret ID
 # Linux and MacOS
 export CONSUL_HTTP_TOKEN=SECRETID_VALUE
+export CONSUL_HTTP_TOKEN=898f9ea2-6e91-f06f-0b0d-ffe4dac042a3
 
 # Windows
 $env:CONSUL_HTTP_TOKEN="SECRETID_VALUE"
